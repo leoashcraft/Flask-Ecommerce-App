@@ -11,7 +11,7 @@
                     <p class="card-header text-center"><a class="text-dark text-decoration-none" href="{{url_for('product', product_id = product.id)}}">{{ product.name }}</a></p>
                     <p class="card-body text-center">$ {{ product.price }}</p>
                     <p><img src="{{ url_for('static', filename='product_pics/' + product.image_file) }}" alt="..." srcset=""></p>
-                    <p class="" style="width: 100%;"><a style="width: 100%;" class="more btn btn-success btn-lg" href="{{url_for('product', product_id = product.id)}}">Buy</a></p>
+                    <p class="" style="width: 100%;"><a style="width: 100%;" class="more btn btn-success btn-lg" href="{{url_for('product', product_id = product.id)}}">View Item</a></p>
                     <p class="" style="width: 100%;"><a style="width: 100%;" class="more text-decoration-none btn btn-light text-dark btn-lg" href="{{url_for('deletefromcart', product_id = product.id)}}">Remove</a></p>
                 </div>
             </div>
