@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<style>
+img {
+    max-width: 200px;
+}
+</style>
+
+{% endblock style %}
+
+{% block content %}
+<h1 class="text-center mb-4">All products</h1><div class="container-fluid">
+    <div class="row g-2">
+        {% for product in products %}
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="p-3 text-center card category-card">
+                    <p class="card-header text-center"><a class="text-dark text-decoration-none" href="{{url_for('product', product_id = product.id)}}">{{ product.name }}</a></p>
+                    <p class="card-body text-center">$ {{ product.price }}</p>
+                    <p><img src="{{ url_for('static', filename='product_pics/' + product.image_file) }}" alt="..." srcset=""></p>
+                    <p class="" style="width: 100%;"><a style="width: 100%;" class="more btn btn-success btn-lg" href="{{url_for('product', product_id = product.id)}}">Buy</a></p>
+                    <p class="" style="width: 100%;"><a style="width: 100%;" class="more btn btn-primary btn-lg" href="{{url_for('addtocart', product_id = product.id)}}">Add to cart</a></p>
+                </div>
+            </div>
+    
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
+

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row g-2 mt-5">
+    <div class="col-12 col-sm-12 col-md-6">
+            <div class="p-3 text-center">
+                <p><img src="{{ url_for('static', filename='product_pics/' + product.image_file) }}" alt="..." srcset=""></p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6">
+            <div class="p-3 text-center card category-card">
+                <p class="card-header text-center"><a class="text-dark text-decoration-none" href="">{{ product.name }}</a></p>
+                <p class="card-body text-center"> {{ product.description }}</p>
+                <p class="card-body text-center">$ {{ product.price }}</p>
+                <p class="" style="width: 100%;"><a style="width: 100%;" class="more btn btn-primary btn-lg" href="{{url_for('addtocart', product_id = product.id)}}">Add to cart</a></p>
+            </div>
+        </div>
+    
+    </div>
+</div>
+{% endblock content %}
+

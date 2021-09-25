@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="form-div">
+  <h1>Register</h1>
+  <small style="color:red">{{error}}</small>
+
+  <form action="{{url_for('register')}}" method="POST">
+    {{ form.hidden_tag() }}
+
+    {# first_name section #}
+    {{ form.first_name.label(class="form-label") }}
+    {{ form.first_name(class="form-control") }}
+
+    {{ form.last_name.label(class="form-label") }}
+    {{ form.last_name(class="form-control") }}
+
+    {{ form.email.label(class="form-label") }}
+    {{ form.email(class="form-control") }}
+
+    {% for error in form.email.errors %}
+    {{ error }}
+    {% endfor %}
+
+    {{ form.password.label(class="form-label") }}
+    {{ form.password(class="form-control") }}
+
+    {{ form.confirm_password.label(class="form-label") }}
+    {{ form.confirm_password(class="form-control") }}
+
+    {% for error in form.confirm_password.errors %}
+    {{ error }}
+    {% endfor %}
+
+    {# submit section #}
+    {{ form.submit(class="btn btn-primary mt-2") }}
+  </form>
+
+
+</div>
+
+
+{% endblock %}
